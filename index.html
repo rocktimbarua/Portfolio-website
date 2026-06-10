@@ -43,6 +43,17 @@
             }
         }
 
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -290,104 +301,6 @@
             font-size: 0.95rem;
         }
 
-        /* --- Custom Interactive Dashboards Styling --- */
-        .new-dash-section {
-            margin-top: 1rem;
-        }
-        .new-dash-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-        }
-        .new-dash-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
-            display: grid;
-            grid-template-columns: 42% 58%;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .new-dash-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: #cbd5e1;
-        }
-        .new-dash-img-box {
-            background-color: #edf2f7;
-            height: 100%;
-            min-height: 260px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-right: 1px solid var(--border-color);
-        }
-        .new-dash-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .new-dash-card:hover .new-dash-img-box img {
-            transform: scale(1.04);
-        }
-        .new-dash-content {
-            padding: 2.2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
-        }
-        .new-dash-content h4 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-        }
-        .new-dash-subtitle {
-            font-size: 0.95rem;
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .new-insights-container {
-            background-color: #f8fafc;
-            border-left: 4px solid var(--accent-green);
-            padding: 1.2rem;
-            border-radius: 0 6px 6px 0;
-        }
-        .new-insights-container h5 {
-            color: var(--primary-color);
-            font-size: 0.95rem;
-            margin-bottom: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .new-insights-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .new-insights-list li {
-            font-size: 0.9rem;
-            color: #1e293b;
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 15px;
-            line-height: 1.5;
-        }
-        .new-insights-list li::before {
-            content: "•";
-            color: var(--accent-green);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
         /* --- Footer --- */
         footer {
             text-align: center;
@@ -400,10 +313,6 @@
         }
 
         /* --- Responsive Design Adjustments --- */
-        @media (max-width: 900px) {
-            .new-dash-card { grid-template-columns: 100%; }
-            .new-dash-img-box { min-height: 220px; border-right: none; border-bottom: 1px solid var(--border-color); }
-        }
         @media (max-width: 768px) {
             header h1 { font-size: 2.2rem; }
             header h2 { font-size: 1.1rem; }
@@ -447,67 +356,6 @@
                 <span class="skill-tag">KPI Tracking Systems</span>
                 <span class="skill-tag">Process Optimization</span>
                 <span class="skill-tag">Risk Management & Verification</span>
-            </div>
-        </section>
-
-        <section class="new-dash-section" id="interactive-dashboards">
-            <h3 class="section-title">Interactive Dashboards & Analytical Insights</h3>
-            <div class="new-dash-grid">
-                
-                <div class="new-dash-card">
-                    <div class="new-dash-img-box">
-                        <img src="dashboard1.png" alt="HR Operations & Payroll Tracker Image">
-                    </div>
-                    <div class="new-dash-content">
-                        <h4>HR Operations & Payroll Tracking Dashboard</h4>
-                        <p class="new-subtitle">Compensation Mapping & Process Governance</p>
-                        <div class="new-insights-container">
-                            <h5>📊 Operational Data Insights:</h5>
-                            <ul class="new-insights-list">
-                                <li><strong>Audit Readiness:</strong> Engineered to monitor active cross-functional personnel outlays, securing full regulatory tracking compliance.</li>
-                                <li><strong>Error Control:</strong> Built with strict structural constraints to achieve absolute verification precision on core compensation workflows.</li>
-                                <li><strong>Data Mapping:</strong> Automates regional salary sorting matrices using advanced Excel parsing logic to minimize operational oversights.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="new-dash-card">
-                    <div class="new-dash-img-box">
-                        <img src="dashboard2.png" alt="MFS KPI Metrics Dashboard Image">
-                    </div>
-                    <div class="new-dash-content">
-                        <h4>KPI Performance & MFS Operational Dashboard</h4>
-                        <p class="new-subtitle">Mobile Financial Services Business Intelligence</p>
-                        <div class="new-insights-container">
-                            <h5>📊 Operational Data Insights:</h5>
-                            <ul class="new-insights-list">
-                                <li><strong>Velocity Acceleration:</strong> Consolidated scattered field performance pipelines to decrease manual data processing friction by 25%.</li>
-                                <li><strong>Decision Matrix:</strong> Boosted regional visibility parameters to increase executive decision tracking accuracy by 15%.</li>
-                                <li><strong>Blocker Isolation:</strong> Implemented dynamic conditional variance alarms to instantly flag missing or underperforming field compliance targets.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="new-dash-card">
-                    <div class="new-dash-img-box">
-                        <img src="dashboard3.png" alt="Logistics Optimization Dashboard Image">
-                    </div>
-                    <div class="new-dash-content">
-                        <h4>Logistics & Cost Optimization Framework</h4>
-                        <p class="new-subtitle">Clearing, Forwarding & Budget Estimation Model</p>
-                        <div class="new-insights-container">
-                            <h5>📊 Operational Data Insights:</h5>
-                            <ul class="new-insights-list">
-                                <li><strong>Expense Deflection:</strong> Visualized historical clearing overhead data points to help eliminate pipeline waste and target a 10% operational cost reduction.</li>
-                                <li><strong>Throughput Tracking:</strong> Maps multi-stage customs and shipping document status cycles, lifting supply movement visibility scores by 15%.</li>
-                                <li><strong>Proactive Forecasts:</strong> Formulated custom trend baseline sheets to accurately project month-to-month logistical spending shifts.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -584,5 +432,191 @@
         <p>&copy; 2026 Rocktim Barua. Portfolio engineered to track operational, analytical, and data compliance excellence.</p>
     </footer>
 
-</body>
+    <style>
+        .new-dash-section {
+            max-width: 1140px;
+            margin: 5rem auto;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .new-dash-title {
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-align: left;
+        }
+        .new-dash-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 70px;
+            height: 2px;
+            background-color: #2563eb;
+        }
+        .new-dash-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .new-dash-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .new-dash-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #cbd5e1;
+        }
+        .new-dash-img-box {
+            background-color: #edf2f7;
+            height: 100%;
+            min-height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .new-dash-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .new-dash-card:hover .new-dash-img-box img {
+            transform: scale(1.04);
+        }
+        .new-dash-content {
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+        .new-dash-content h4 {
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+        .new-dash-subtitle {
+            font-size: 0.95rem;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .new-insights-container {
+            background-color: #f8fafc;
+            border-left: 4px solid #10b981;
+            padding: 1.2rem;
+            border-radius: 0 6px 6px 0;
+        }
+        .new-insights-container h5 {
+            color: #0f172a;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .new-insights-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .new-insights-list li {
+            font-size: 0.9rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 15px;
+            line-height: 1.5;
+        }
+        .new-insights-list li::before {
+            content: "•";
+            color: #10b981;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        @media (max-width: 900px) {
+            .new-dash-card { grid-template-columns: 100%; }
+            .new-dash-img-box { min-height: 200px; }
+        }
+    </style>
+
+    <section class="new-dash-section" id="interactive-dashboards">
+        <h3 class="new-dash-title">Interactive Dashboards & Analytical Insights</h3>
+        <div class="new-dash-grid">
+            
+            <div class="new-dash-card">
+                <div class="new-dash-img-box">
+                    <img src="dashboard1.png" alt="HR Operations & Payroll Tracker Image">
+                </div>
+                <div class="new-dash-content">
+                    <h4>HR Operations & Payroll Tracking Dashboard</h4>
+                    <p class="new-subtitle">Compensation Mapping & Process Governance</p>
+                    <div class="new-insights-container">
+                        <h5>📊 Operational Data Insights:</h5>
+                        <ul class="new-insights-list">
+                            <li><strong>Audit Readiness:</strong> Engineered to monitor active cross-functional personnel outlays, securing full regulatory tracking compliance.</li>
+                            <li><strong>Error Control:</strong> Built with strict structural constraints to achieve absolute verification precision on core compensation workflows.</li>
+                            <li><strong>Data Mapping:</strong> Automates regional salary sorting matrices using advanced Excel parsing logic to minimize operational oversights.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="new-dash-card">
+                <div class="new-dash-img-box">
+                    <img src="dashboard2.png" alt="MFS KPI Metrics Dashboard Image">
+                </div>
+                <div class="new-dash-content">
+                    <h4>KPI Performance & MFS Operational Dashboard</h4>
+                    <p class="new-subtitle">Mobile Financial Services Business Intelligence</p>
+                    <div class="new-insights-container">
+                        <h5>📊 Operational Data Insights:</h5>
+                        <ul class="new-insights-list">
+                            <li><strong>Velocity Acceleration:</strong> Consolidated scattered field performance pipelines to decrease manual data processing friction by 25%.</li>
+                            <li><strong>Decision Matrix:</strong> Boosted regional visibility parameters to increase executive decision tracking accuracy by 15%.</li>
+                            <li><strong>Blocker Isolation:</strong> Implemented dynamic conditional variance alarms to instantly flag missing or underperforming field compliance targets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="new-dash-card">
+                <div class="new-dash-img-box">
+                    <img src="dashboard3.png" alt="Logistics Optimization Dashboard Image">
+                </div>
+                <div class="new-dash-content">
+                    <h4>Logistics & Cost Optimization Framework</h4>
+                    <p class="new-subtitle">Clearing, Forwarding & Budget Estimation Model</p>
+                    <div class="new-insights-container">
+                        <h5>📊 Operational Data Insights:</h5>
+                        <ul class="new-insights-list">
+                            <li><strong>Expense Deflection:</strong> Visualized historical clearing overhead data points to help eliminate pipeline waste and target a 10% operational cost reduction.</li>
+                            <li><strong>Throughput Tracking:</strong> Maps multi-stage customs and shipping document status cycles, lifting supply movement visibility scores by 15%.</li>
+                            <li><strong>Proactive Forecasts:</strong> Formulated custom trend baseline sheets to accurately project month-to-month logistical spending shifts.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    </body>
 </html>
